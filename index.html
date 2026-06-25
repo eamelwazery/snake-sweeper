@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #1a1a1a;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #b4b4bb;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🐍 Snake Sweeper - Minesweeper Adventure</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cell-size: 36px;
+  --grid-gap: 2px;
+  --primary: #4a90d9;
+  --primary-dark: #357abd;
+  --danger: #e74c3c;
+  --success: #27ae60;
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --surface-light: #0f3460;
+  --text: #eaeaea;
+  --cell-unrevealed: #5b86e5;
+  --cell-revealed: #e8e8e8;
+  --gold: #f39c12;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.game-container {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-width: 95vw;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.stat-box {
+  background: var(--surface-light);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-box .label {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mine-counter { color: var(--danger); }
+.timer { color: var(--gold); }
+
+.restart-btn {
+  font-size: 1.6rem;
+  background: var(--surface-light);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart-btn:hover { transform: scale(1.1); background: #1a4a80; }
+.restart-btn:active { transform: scale(0.95); }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.diff-btn {
+  padding: 5px 14px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--text);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.diff-btn:hover { background: var(--primary); }
+.diff-btn.active { background: var(--primary); box-shadow: 0 0 12px rgba(74,144,217,0.4); }
+
+.grid-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #333;
+  padding: var(--grid-gap);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  position: relative;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--cell-unrevealed);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: transform 0.1s, background 0.15s;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cell:hover:not(.revealed):not(.flagged) {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+.cell.revealed {
+  background: var(--cell-revealed);
+  cursor: default;
+  transform: none;
+}
+
+.cell.revealed.mine-cell {
+  background: #ffcccc;
+}
+
+.cell.flagged::after {
+  content: '🚩';
+  font-size: 1rem;
+}
+
+.cell.mine-exploded {
+  background: var(--danger) !important;
+  animation: explodeCell 0.5s ease-out;
+}
+
+@keyframes explodeCell {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.cell .number { pointer-events: none; }
+.n1 { color: #1976d2; }
+.n2 { color: #388e3c; }
+.n3 { color: #d32f2f; }
+.n4 { color: #7b1fa2; }
+.n5 { color: #ff8f00; }
+.n6 { color: #00838f; }
+.n7 { color: #424242; }
+.n8 { color: #78909c; }
+
+/* Character */
+.character {
+  position: absolute;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  z-index: 10;
+  pointer-events: none;
+  transition: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.character.walking {
+  animation: bounce 0.35s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-2px) rotate(-3deg); }
+  75% { transform: translateX(2px) rotate(3deg); }
+}
+
+.character.breaking {
+  animation: breakAnim 0.3s ease-out;
+}
+
+@keyframes breakAnim {
+  0% { transform: scale(1) rotate(0deg); }
+  30% { transform: scale(1.2) rotate(-10deg); }
+  60% { transform: scale(1.3) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.character.dying {
+  animation: dieAnim 0.8s ease-out forwards;
+}
+
+@keyframes dieAnim {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  30% { transform: scale(1.5) rotate(15deg); opacity: 1; }
+  60% { transform: scale(0.8) rotate(-180deg); opacity: 0.7; }
+  100% { transform: scale(0.3) rotate(-360deg); opacity: 0; }
+}
+
+.character.celebrating {
+  animation: celebrate 0.5s ease-in-out infinite;
+}
+
+@keyframes celebrate {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(0deg) translateY(-6px); }
+  75% { transform: scale(1.1) rotate(5deg); }
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+  animation: particleFly 0.6s ease-out forwards;
+}
+
+@keyframes particleFly {
+  0% { opacity: 1; transform: translate(0,0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.3); }
+}
+
+.explosion-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+  animation: explosionFly 0.8s ease-out forwards;
+}
+
+@keyframes explosionFly {
+  0% { opacity: 1; transform: translate(0,0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.5) rotate(720deg); }
+}
+
+/* Game over overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.overlay p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Message */
+.message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  min-height: 1.2em;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  :root { --cell-size: 30px; }
+  h1 { font-size: 1.2rem; }
+  .game-container { padding: 10px; }
+}
+
+@media (min-width: 600px) {
+  :root { --cell-size: 38px; }
+}
+
+/* Smooth reveal animation */
+.cell.revealing {
+  animation: revealPop 0.2s ease-out;
+}
+
+@keyframes revealPop {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Long press indicator */
+.cell.pressing {
+  animation: pressIndicator 0.5s ease-out;
+}
+
+@keyframes pressIndicator {
+  0% { box-shadow: inset 0 0 0 0 rgba(231,76,60,0.4); }
+  100% { box-shadow: inset 0 0 0 3px rgba(231,76,60,0.8); }
+}
+
+.sound-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.sound-toggle:hover { opacity: 1; }
+
+/* Snake Body Segments */
+.snake-segment {
+  position: absolute;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+  transition: left 0.08s linear, top 0.08s linear;
+}
+
+.snake-segment .seg-dot {
+  width: 60%;
+  height: 60%;
+  background: #4CAF50;
+  border-radius: 50%;
+  border: 1.5px solid #2E7D32;
+}
+
+.snake-segment:nth-child(2) .seg-dot { width: 55%; height: 55%; opacity: 0.9; }
+.snake-segment:nth-child(3) .seg-dot { width: 50%; height: 50%; opacity: 0.8; }
+.snake-segment:nth-child(4) .seg-dot { width: 45%; height: 45%; opacity: 0.7; }
+.snake-segment:nth-child(5) .seg-dot { width: 40%; height: 40%; opacity: 0.6; }
+.snake-segment:nth-child(6) .seg-dot { width: 35%; height: 35%; opacity: 0.5; }
+.snake-segment:nth-child(7) .seg-dot { width: 30%; height: 30%; opacity: 0.4; }
+.snake-segment:nth-child(8) .seg-dot { width: 25%; height: 25%; opacity: 0.3; }
+
+.character {
+  z-index: 10 !important;
+}
+
+</style>
+</head>
+<body>
+
+<h1>🐍 Snake Sweeper</h1>
+
+<div class="game-container">
+  <button class="sound-toggle" id="soundToggle" title="Toggle Sound">🔊</button>
+  
+  <div class="controls">
+    <button class="diff-btn active" data-diff="easy">Easy</button>
+    <button class="diff-btn" data-diff="medium">Medium</button>
+    <button class="diff-btn" data-diff="hard">Hard</button>
+  </div>
+
+  <div class="top-bar">
+    <div class="stat-box mine-counter">
+      <div class="label">Mines</div>
+      <div id="mineCount">15</div>
+    </div>
+    <button class="restart-btn" id="restartBtn">😊</button>
+    <div class="stat-box timer">
+      <div class="label">Time</div>
+      <div id="timer">000</div>
+    </div>
+  </div>
+
+  <div class="grid-wrapper">
+    <div class="grid" id="grid"></div>
+    <div id="snake-body-container"></div>
+    <div class="character" id="character"><svg viewBox="0 0 40 40" width="28" height="28"><ellipse cx="20" cy="20" rx="10" ry="12" fill="#4CAF50"></ellipse><ellipse cx="20" cy="20" rx="10" ry="12" fill="none" stroke="#2E7D32" stroke-width="1.5"></ellipse><circle cx="15" cy="16" r="3" fill="#fff"></circle><circle cx="25" cy="16" r="3" fill="#fff"></circle><circle cx="15" cy="16.5" r="1.8" fill="#000"></circle><circle cx="25" cy="16.5" r="1.8" fill="#000"></circle><circle cx="15.5" cy="15.5" r="0.7" fill="#fff"></circle><circle cx="25.5" cy="15.5" r="0.7" fill="#fff"></circle><path d="M20 8 L18 4 M20 8 L22 4" stroke="#E53935" stroke-width="1.2" stroke-linecap="round"></path><ellipse cx="20" cy="25" rx="4" ry="2" fill="#2E7D32" opacity="0.4"></ellipse></svg></div>
+    <div class="overlay" id="overlay">
+      <h2 id="overlayTitle"></h2>
+      <p id="overlayMsg"></p>
+    </div>
+  </div>
+
+  <div class="message" id="message">Tap anywhere to ssstart! 🐍</div>
+</div>
+
+<script>
+// ===== GAME CONFIG =====
+const DIFFICULTIES = {
+  easy: { rows: 10, cols: 10, mines: 15 },
+  medium: { rows: 14, cols: 14, mines: 40 },
+  hard: { rows: 16, cols: 16, mines: 60 }
+};
+
+let config = { ...DIFFICULTIES.easy };
+let grid = [];
+let revealed = [];
+let flagged = [];
+let mines = [];
+let gameState = 'waiting'; // waiting, playing, won, lost
+let timer = 0;
+let timerInterval = null;
+let charPos = null;
+let isAnimating = false;
+let soundEnabled = true;
+let firstClick = true;
+
+// DOM elements
+const gridEl = document.getElementById('grid');
+const charEl = document.getElementById('character');
+const mineCountEl = document.getElementById('mineCount');
+const timerEl = document.getElementById('timer');
+const restartBtn = document.getElementById('restartBtn');
+const overlay = document.getElementById('overlay');
+const overlayTitle = document.getElementById('overlayTitle');
+const overlayMsg = document.getElementById('overlayMsg');
+const messageEl = document.getElementById('message');
+const soundToggle = document.getElementById('soundToggle');
+
+// ===== AUDIO ENGINE =====
+let audioCtx = null;
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function playTone(freq, duration, type = 'square', volume = 0.15) {
+  if (!soundEnabled) return;
+  try {
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    gain.gain.setValueAtTime(volume, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + duration);
+  } catch(e) {}
+}
+
+function playStep() { playTone(440 + Math.random() * 200, 0.08, 'sine', 0.1); }
+function playBreak() { playTone(300, 0.15, 'square', 0.12); playTone(600, 0.1, 'sine', 0.08); }
+function playFlag() { playTone(800, 0.1, 'triangle', 0.15); }
+function playExplosion() {
+  if (!soundEnabled) return;
+  try {
+    const ctx = getAudioCtx();
+    const bufferSize = ctx.sampleRate * 0.5;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 2);
+    }
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    noise.connect(gain);
+    gain.connect(ctx.destination);
+    noise.start();
+  } catch(e) {}
+}
+function playWin() {
+  [523, 659, 784, 1047].forEach((f, i) => {
+    setTimeout(() => playTone(f, 0.3, 'sine', 0.15), i * 150);
+  });
+}
+
+// ===== GAME LOGIC =====
+function initGame() {
+  clearInterval(timerInterval);
+  timer = 0;
+  timerEl.textContent = '000';
+  gameState = 'waiting';
+  firstClick = true;
+  charPos = null;
+  isAnimating = false;
+  charEl.style.display = 'none';
+  snakeTrail = [];
+  if(snakeBodyContainer) snakeBodyContainer.innerHTML = '';
+  charEl.className = 'character';
+  overlay.classList.remove('visible');
+  restartBtn.textContent = '😊';
+  messageEl.textContent = 'Tap anywhere to ssstart! 🐍';
+
+  const { rows, cols, mines: mineCount } = config;
+  grid = Array.from({ length: rows }, () => Array(cols).fill(0));
+  revealed = Array.from({ length: rows }, () => Array(cols).fill(false));
+  flagged = Array.from({ length: rows }, () => Array(cols).fill(false));
+  mines = [];
+
+  mineCountEl.textContent = mineCount;
+
+  // Set grid CSS
+  gridEl.style.gridTemplateColumns = `repeat(${cols}, var(--cell-size))`;
+  gridEl.style.gridTemplateRows = `repeat(${rows}, var(--cell-size))`;
+  gridEl.innerHTML = '';
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.row = r;
+      cell.dataset.col = c;
+      gridEl.appendChild(cell);
+    }
+  }
+}
+
+function placeMines(safeRow, safeCol) {
+  const { rows, cols, mines: mineCount } = config;
+  mines = [];
+  
+  // Create safe zone around first click
+  const safeZone = new Set();
+  for (let dr = -1; dr <= 1; dr++) {
+    for (let dc = -1; dc <= 1; dc++) {
+      const r = safeRow + dr, c = safeCol + dc;
+      if (r >= 0 && r < rows && c >= 0 && c < cols) {
+        safeZone.add(`${r},${c}`);
+      }
+    }
+  }
+
+  while (mines.length < mineCount) {
+    const r = Math.floor(Math.random() * rows);
+    const c = Math.floor(Math.random() * cols);
+    const key = `${r},${c}`;
+    if (!safeZone.has(key) && grid[r][c] !== -1) {
+      grid[r][c] = -1;
+      mines.push({ r, c });
+    }
+  }
+
+  // Calculate numbers
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (grid[r][c] === -1) continue;
+      let count = 0;
+      for (let dr = -1; dr <= 1; dr++) {
+        for (let dc = -1; dc <= 1; dc++) {
+          const nr = r + dr, nc = c + dc;
+          if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] === -1) count++;
+        }
+      }
+      grid[r][c] = count;
+    }
+  }
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timer++;
+    timerEl.textContent = String(timer).padStart(3, '0');
+  }, 1000);
+}
+
+function getCellEl(r, c) {
+  return gridEl.children[r * config.cols + c];
+}
+
+function getCellPosition(r, c) {
+  const cellSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--cell-size'));
+  const gap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-gap'));
+  return {
+    x: c * (cellSize + gap),
+    y: r * (cellSize + gap)
+  };
+}
+
+function moveCharTo(r, c) {
+  const pos = getCellPosition(r, c);
+  charEl.style.left = pos.x + 'px';
+  charEl.style.top = pos.y + 'px';
+  charPos = { r, c };
+}
+
+function revealCell(r, c) {
+  if (r < 0 || r >= config.rows || c < 0 || c >= config.cols) return;
+  if (revealed[r][c] || flagged[r][c]) return;
+
+  revealed[r][c] = true;
+  const cellEl = getCellEl(r, c);
+  cellEl.classList.add('revealed', 'revealing');
+
+  if (grid[r][c] === -1) {
+    cellEl.classList.add('mine-cell');
+    cellEl.innerHTML = '💣';
+  } else if (grid[r][c] > 0) {
+    cellEl.innerHTML = `<span class="number n${grid[r][c]}">${grid[r][c]}</span>`;
+  }
+
+  // Flood fill for empty cells
+  if (grid[r][c] === 0) {
+    setTimeout(() => {
+      for (let dr = -1; dr <= 1; dr++) {
+        for (let dc = -1; dc <= 1; dc++) {
+          if (dr === 0 && dc === 0) continue;
+          revealCell(r + dr, c + dc);
+        }
+      }
+    }, 30);
+  }
+}
+
+function spawnParticles(r, c, type) {
+  const pos = getCellPosition(r, c);
+  const cellSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--cell-size'));
+  const centerX = pos.x + cellSize / 2;
+  const centerY = pos.y + cellSize / 2;
+  const count = type === 'explosion' ? 12 : 6;
+  const emojis = type === 'explosion' ? ['💥', '🔥', '💫', '⭐'] : ['✨', '💎', '⭐'];
+
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement('div');
+    particle.className = type === 'explosion' ? 'explosion-particle' : 'particle';
+    particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    particle.style.fontSize = (type === 'explosion' ? 16 : 12) + 'px';
+    particle.style.left = centerX + 'px';
+    particle.style.top = centerY + 'px';
+    const angle = (Math.PI * 2 * i) / count + Math.random() * 0.5;
+    const dist = 30 + Math.random() * 40;
+    particle.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+    particle.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+    gridEl.parentElement.appendChild(particle);
+    setTimeout(() => particle.remove(), 800);
+  }
+}
+
+function checkWin() {
+  const { rows, cols, mines: mineCount } = config;
+  let revealedCount = 0;
+  for (let r = 0; r < rows; r++)
+    for (let c = 0; c < cols; c++)
+      if (revealed[r][c]) revealedCount++;
+  
+  if (revealedCount === rows * cols - mineCount) {
+    gameState = 'won';
+    clearInterval(timerInterval);
+    restartBtn.textContent = '😎';
+    charEl.className = 'character celebrating';
+    messageEl.textContent = '🎉 You found all safe cells!';
+    playWin();
+    
+    // Reveal remaining mines as flags
+    mines.forEach(({ r, c }) => {
+      if (!flagged[r][c]) {
+        flagged[r][c] = true;
+        getCellEl(r, c).classList.add('flagged');
+      }
+    });
+
+    setTimeout(() => {
+      overlayTitle.textContent = '🏆 You Win!';
+      overlayMsg.textContent = `Time: ${timer}s | All mines found!`;
+      overlay.classList.add('visible');
+    }, 1000);
+  }
+}
+
+function gameOver(mineR, mineC) {
+  gameState = 'lost';
+  clearInterval(timerInterval);
+  restartBtn.textContent = '😵';
+  charEl.className = 'character dying';
+  messageEl.textContent = '💀 Oh no! You hit a mine!';
+  playExplosion();
+
+  const cellEl = getCellEl(mineR, mineC);
+  cellEl.classList.add('mine-exploded');
+  spawnParticles(mineR, mineC, 'explosion');
+
+  // Reveal all mines
+  setTimeout(() => {
+    mines.forEach(({ r, c }) => {
+      if (r === mineR && c === mineC) return;
+      if (!revealed[r][c] && !flagged[r][c]) {
+        revealed[r][c] = true;
+        const el = getCellEl(r, c);
+        el.classList.add('revealed', 'mine-cell');
+        el.innerHTML = '💣';
+      }
+    });
+
+    setTimeout(() => {
+      overlayTitle.textContent = '💥 Game Over';
+      overlayMsg.textContent = `Time: ${timer}s | Tap 😵 to restart`;
+      overlay.classList.add('visible');
+    }, 500);
+  }, 400);
+}
+
+// ===== PATH FINDING (BFS) =====
+function findPath(startR, startC, endR, endC) {
+  const { rows, cols } = config;
+  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));
+  const parent = Array.from({ length: rows }, () => Array(cols).fill(null));
+  const queue = [{ r: startR, c: startC }];
+  visited[startR][startC] = true;
+
+  const dirs = [[0,1],[0,-1],[1,0],[-1,0]];
+
+  while (queue.length > 0) {
+    const { r, c } = queue.shift();
+    if (r === endR && c === endC) {
+      // Reconstruct path
+      const path = [];
+      let cur = { r: endR, c: endC };
+      while (cur) {
+        path.unshift(cur);
+        cur = parent[cur.r][cur.c];
+      }
+      return path;
+    }
+
+    for (const [dr, dc] of dirs) {
+      const nr = r + dr, nc = c + dc;
+      if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && !visited[nr][nc]) {
+        // Can walk on revealed cells or the destination
+        if (revealed[nr][nc] || (nr === endR && nc === endC)) {
+          visited[nr][nc] = true;
+          parent[nr][nc] = { r, c };
+          queue.push({ r: nr, c: nc });
+        }
+      }
+    }
+  }
+
+  // No path through revealed cells - try direct walk (Manhattan)
+  return getManhattanPath(startR, startC, endR, endC);
+}
+
+function getManhattanPath(startR, startC, endR, endC) {
+  const path = [{ r: startR, c: startC }];
+  let r = startR, c = startC;
+  
+  while (r !== endR || c !== endC) {
+    if (r < endR) r++;
+    else if (r > endR) r--;
+    else if (c < endC) c++;
+    else if (c > endC) c--;
+    path.push({ r, c });
+  }
+  return path;
+}
+
+// ===== ANIMATION =====
+async function animateWalkTo(targetR, targetC) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const path = findPath(charPos.r, charPos.c, targetR, targetC);
+  if (path.length <= 1) {
+    isAnimating = false;
+    return handleCellAction(targetR, targetC);
+  }
+
+  charEl.className = 'character walking';
+  
+  // Snake body trail - store positions
+  const TAIL_LENGTH = 7;
+  
+  // Walk step by step (skip first since we're already there)
+  for (let i = 1; i < path.length; i++) {
+    const { r, c } = path[i];
+    
+    // Add current head position to body trail before moving
+    snakeTrail.push({ r: charPos.r, c: charPos.c });
+    if (snakeTrail.length > TAIL_LENGTH) snakeTrail.shift();
+    
+    moveCharTo(r, c);
+    renderSnakeBody();
+    playStep();
+    
+    // Rotate character based on direction
+    const prev = path[i-1];
+    if (c > prev.c) charEl.style.transform = 'rotate(90deg)';
+    else if (c < prev.c) charEl.style.transform = 'rotate(-90deg)';
+    else if (r > prev.r) charEl.style.transform = 'rotate(180deg)';
+    else if (r < prev.r) charEl.style.transform = 'rotate(0deg)';
+
+    await sleep(100);
+  }
+
+  charEl.className = 'character';
+  isAnimating = false;
+
+  // Slowly retract tail after arriving
+  retractTail();
+
+  handleCellAction(targetR, targetC);
+}
+
+let snakeTrail = [];
+const snakeBodyContainer = document.getElementById('snake-body-container');
+
+function renderSnakeBody() {
+  snakeBodyContainer.innerHTML = '';
+  const cellSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--cell-size'));
+  const gap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--grid-gap'));
+  const step = cellSize + gap;
+  
+  snakeTrail.forEach((pos, idx) => {
+    const seg = document.createElement('div');
+    seg.className = 'snake-segment';
+    seg.style.left = (pos.c * step + gap) + 'px';
+    seg.style.top = (pos.r * step + gap) + 'px';
+    seg.innerHTML = '<div class="seg-dot"></div>';
+    snakeBodyContainer.appendChild(seg);
+  });
+}
+
+async function retractTail() {
+  while (snakeTrail.length > 0) {
+    await sleep(60);
+    snakeTrail.shift();
+    renderSnakeBody();
+  }
+}
+
+function handleCellAction(r, c) {
+  if (gameState !== 'playing') return;
+  if (flagged[r][c]) return;
+  // If already revealed, just stand there (no action needed)
+  if (revealed[r][c]) return;
+
+  charEl.className = 'character breaking';
+  playBreak();
+  spawnParticles(r, c, 'break');
+
+  setTimeout(() => {
+    if (gameState !== 'playing') return;
+    charEl.className = 'character';
+  }, 300);
+
+  if (grid[r][c] === -1) {
+    gameOver(r, c);
+  } else {
+    revealCell(r, c);
+    checkWin();
+    messageEl.textContent = getRandomMessage();
+  }
+}
+
+function getRandomMessage() {
+  const msgs = [
+    'Ssssafe! 🐍', 'Slither slither! 🌿', 'Forked tongue senses danger... 👅',
+    'Ssssmooth move! ✨', 'Hisss! Watch out! 🐍', 'No venom here! 💚',
+    'The hunt continuesss! 🗺️', 'Sssstay sharp! 🎯', 'Ssssuperb! 🏆'
+  ];
+  return msgs[Math.floor(Math.random() * msgs.length)];
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ===== EVENT HANDLERS =====
+let longPressTimer = null;
+let longPressTriggered = false;
+
+function handleCellClick(r, c) {
+  if (gameState === 'won' || gameState === 'lost') return;
+  if (isAnimating) return;
+  if (longPressTriggered) { longPressTriggered = false; return; }
+  if (flagged[r][c]) return;
+
+  // Allow walking to revealed cells (just move there)
+  if (revealed[r][c] && !firstClick) {
+    animateWalkTo(r, c);
+    return;
+  }
+
+  if (firstClick) {
+    firstClick = false;
+    gameState = 'playing';
+    placeMines(r, c);
+    startTimer();
+    
+    // Place character
+    charEl.style.display = 'flex';
+    snakeTrail = [];
+    moveCharTo(r, c);
+    charEl.className = 'character breaking';
+    playBreak();
+    spawnParticles(r, c, 'break');
+
+    setTimeout(() => {
+      charEl.className = 'character';
+    }, 300);
+
+    revealCell(r, c);
+    messageEl.textContent = getRandomMessage();
+    return;
+  }
+
+  animateWalkTo(r, c);
+}
+
+function handleFlag(r, c) {
+  if (gameState !== 'playing') return;
+  if (revealed[r][c]) return;
+
+  const cellEl = getCellEl(r, c);
+  
+  if (flagged[r][c]) {
+    flagged[r][c] = false;
+    cellEl.classList.remove('flagged');
+    mineCountEl.textContent = config.mines - countFlags();
+  } else {
+    flagged[r][c] = true;
+    cellEl.classList.add('flagged');
+    playFlag();
+    mineCountEl.textContent = config.mines - countFlags();
+  }
+}
+
+function countFlags() {
+  let count = 0;
+  for (let r = 0; r < config.rows; r++)
+    for (let c = 0; c < config.cols; c++)
+      if (flagged[r][c]) count++;
+  return count;
+}
+
+// Grid event listeners
+gridEl.addEventListener('click', (e) => {
+  const cell = e.target.closest('.cell');
+  if (!cell) return;
+  handleCellClick(+cell.dataset.row, +cell.dataset.col);
+});
+
+gridEl.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  const cell = e.target.closest('.cell');
+  if (!cell) return;
+  handleFlag(+cell.dataset.row, +cell.dataset.col);
+});
+
+// Long press for mobile
+gridEl.addEventListener('touchstart', (e) => {
+  const cell = e.target.closest('.cell');
+  if (!cell) return;
+  longPressTriggered = false;
+  cell.classList.add('pressing');
+  longPressTimer = setTimeout(() => {
+    longPressTriggered = true;
+    cell.classList.remove('pressing');
+    handleFlag(+cell.dataset.row, +cell.dataset.col);
+    // Vibrate if available
+    if (navigator.vibrate) navigator.vibrate(50);
+  }, 400);
+}, { passive: true });
+
+gridEl.addEventListener('touchend', (e) => {
+  clearTimeout(longPressTimer);
+  const cell = e.target.closest('.cell');
+  if (cell) cell.classList.remove('pressing');
+});
+
+gridEl.addEventListener('touchmove', () => {
+  clearTimeout(longPressTimer);
+  document.querySelectorAll('.cell.pressing').forEach(c => c.classList.remove('pressing'));
+});
+
+// Controls
+restartBtn.addEventListener('click', initGame);
+overlay.addEventListener('click', initGame);
+
+document.querySelectorAll('.diff-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    config = { ...DIFFICULTIES[btn.dataset.diff] };
+    initGame();
+  });
+});
+
+soundToggle.addEventListener('click', () => {
+  soundEnabled = !soundEnabled;
+  soundToggle.textContent = soundEnabled ? '🔊' : '🔇';
+});
+
+// Prevent zoom on double tap (mobile)
+document.addEventListener('dblclick', (e) => e.preventDefault());
+
+// ===== INIT =====
+initGame();
+</script>
+
+
+</body></html>
